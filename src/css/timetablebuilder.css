@@ -1,16 +1,16 @@
 .container {
     display: flex;
-    width: 100%;
+    width:100%;
 }
 .course-choose-list {
     overflow: auto;
-    height: 150px;
+    height: 200px;
 }
 .timetable {
     overflow: auto;
-    flex: 2;
+    flex: 3;
     width: auto;
-    height: 600px;
+    height: 700px;
 }
 .sidebar {
     width: 33%;
@@ -18,10 +18,8 @@
 }
 
 .timetable-view {
-    display: none; /* 默认不显示 */
+    display: block; /* 默认不显示 */
 }
-
-
 
 .timetable-view.active {
     display: block; /* 激活的视图显示 */
@@ -35,10 +33,9 @@
 }
 
 .row {
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px; /* 为每行添加间隔 */
+    margin-bottom: 10px;
 }
 
 .row .timetable-thumbnail {
