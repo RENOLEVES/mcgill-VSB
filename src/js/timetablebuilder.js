@@ -554,20 +554,20 @@ function switchTerm(term,index=1) {
         document.getElementById('winter-courses').style.display = 'block';
         document.querySelector(`button[onclick="switchTerm(\'winter\')"]`).classList.add('active');
     }
-    switchCridit(term);
+    switchCredit(term);
 }
 
-function switchCridit(term) {
-    let cridit = document.querySelectorAll('.cridit');
+function switchCredit(term) {
+    let credit = document.querySelectorAll('.credit');
     let output = ""
 
     if (term === "fall") {
-        output = `Cridits: ${fallCredit.toFixed(2)} / 3.00`;
+        output = `Total Credits: ${fallCredit.toFixed(2)} / 3.00`;
     }else{
-        output = `Cridits: ${winterCredit.toFixed(2)} / 3.00`;
+        output = `Total Credits: ${winterCredit.toFixed(2)} / 3.00`;
     }
-    cridit.forEach(cridit => {
-        cridit.innerText = output;
+    credit.forEach(credit => {
+        credit.innerText = output;
     });
 }
 
@@ -649,14 +649,14 @@ function deleteCourse(deleteBtn){
         if (fallCourseChoose[i] === deleteId){
             fallCourseChoose.splice(i,1);
             fallCredit -= 0.5;
-            switchCridit("fall");
+            switchCredit("fall");
         }
     }
     for (let i = 0; i < winterCourseChoose.length; i++){
         if (winterCourseChoose[i] === deleteId){
             winterCourseChoose.splice(i,1);
             winterCredit -= 0.5;
-            switchCridit("winter");
+            switchCredit("winter");
         }
     }
     while (true){
@@ -773,33 +773,33 @@ function getRadioInput(radioName){
 }
 
 function getWeight(){
-    let weigth = {
+    let weight = {
         "timeWeight": null,
         "daySpend": null,
         "classInterval": null
     };
-    let parentDiv = document.getElementById('weigth-parent');
+    let parentDiv = document.getElementById('weight-parent');
     // 获取所有子元素
     var children = parentDiv.children;
 
     // 遍历并打印每个子元素及其顺序
     let idx = 4000;
     for (let i = 0; i < children.length; i++) {
-        if(children[i].id === "weigth"){
+        if(children[i].id === "weight"){
 
             let preferenceChildren = children[i].innerText;
 
             if(preferenceChildren.includes("Start time")){
-                weigth["timeWeight"] = idx;
+                weight["timeWeight"] = idx;
                 idx -= 1000;
             }else if(preferenceChildren.includes("Class Interval")){
-                weigth["classInterval"] = idx;
+                weight["classInterval"] = idx;
                 idx -= 1000;
             }else if(preferenceChildren.includes("Days Spent")){
-                weigth["daySpend"] = idx;
+                weight["daySpend"] = idx;
                 idx -= 1000;
             }else if(preferenceChildren.includes("Reasonable Walking Time")){
-                weigth["walkTime"] = idx;
+                weight["walkTime"] = idx;
                 idx -= 1000;
             }
 
