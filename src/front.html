@@ -68,35 +68,7 @@
   </select>
 </div>
 
-<div class="container">
-  <div class="timetable" >
-    <div id="large-view" class="timetable-view">
-      <!-- 大视图的课程表内容 -->
-      <div style="width: 100%;">
-        <table class="table table-bordered" style="text-align: center; table-layout: fixed">
-          <thead>
-          <tr>
-            <th></th>
-            <th>MON</th>
-            <th>TUE</th>
-            <th>WED</th>
-            <th>THU</th>
-            <th>FRI</th>
-          </tr>
-          </thead>
-          <tbody id="timetable-output">
-
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div id="small-view" class="timetable-view" >
-      <!-- 小视图的课程表内容 -->
-    </div>
-    <!-- 视图切换按钮 -->
-    <!-- <button id="toggle-view-btn" onclick="switchView()">切换视图</button> -->
-  </div>
-
+<div class="container-main">
   <div class="sidebar">
     <!-- 学期切换按钮 -->
 
@@ -125,49 +97,76 @@
       </div>
 
 
-          </div>
-          <!-- 偏好设置 -->
-          <div class = "preference" id="preferences-section">
-            <h4>Preferences:</h4>
-            <div class = "preference-list" id="weight-parent">
-              <div class="preference" id = "weight" draggable="true">
-                <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
-                <span id = "start-time">Start time</span>
-                <div class="options">
-                  <input type="radio" id="start-early" name="start-time" value="0"><label for="start-early">Early</label>
-                  <input type="radio" id="start-mid" name="start-time" value="1" checked><label for="start-mid">Mid</label>
-                  <input type="radio" id="start-late" name="start-time" value="2"><label for="start-late">Late</label>
-                </div>
-              </div>
-              <div class="preference" id = "weigth" draggable="true">
-                <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
-                <span id = "class-interval">Class Interval</span>
-                <div class="options">
-                  <input type="radio" id="interval-short" name="class-interval" value="-1"><label for="interval-short">Short</label>
-                  <input type="radio" id="interval-long" name="class-interval" value="1" checked><label for="interval-long">Long</label>
-                </div>
-              </div>
-              <div class="preference" id="weigth" draggable="true">
-                <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
-                <span id = "days-spent">Days Spent</span>
-                <div class="options">
-                  <input type="radio" id="spent-min" name="days-spent" value="-1"><label for="spent-min">Min</label>
-                  <input type="radio" id="spent-max" name="days-spent" value="1" checked><label for="spent-max">Max</label>
-                </div>
-              </div>
-              <div class="preference" id = "weigth" draggable="true">
-                <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
-                <span id = "weight-name">Reasonable Walking Time</span>
-              </div>
-            </div>
-          </div>
-
-      <div class="interface-buttons">
-        <button type="button" class="generate-schedule active" id = "generate-schedule-btn" onclick="fetchData()">GENERATE SCHEDULE</button>
-        <button type="button" class="toggle-view " id="toggle-view-btn" onclick="switchView()">MORE OPTION</button>
-      </div>
-
     </div>
+    <!-- 偏好设置 -->
+    <div class = "preference" id="preferences-section">
+      <h4>Preferences:</h4>
+      <div class = "preference-list" id="weight-parent">
+        <div class="preference" id = "weight" draggable="true">
+          <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
+          <span id = "start-time">Start time</span>
+          <div class="options">
+            <input type="radio" id="start-early" name="start-time" value="0"><label for="start-early">Early</label>
+            <input type="radio" id="start-mid" name="start-time" value="1" checked><label for="start-mid">Mid</label>
+            <input type="radio" id="start-late" name="start-time" value="2"><label for="start-late">Late</label>
+          </div>
+        </div>
+        <div class="preference" id = "weigth" draggable="true">
+          <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
+          <span id = "class-interval">Class Interval</span>
+          <div class="options">
+            <input type="radio" id="interval-short" name="class-interval" value="-1"><label for="interval-short">Short</label>
+            <input type="radio" id="interval-long" name="class-interval" value="1" checked><label for="interval-long">Long</label>
+          </div>
+        </div>
+        <div class="preference" id="weigth" draggable="true">
+          <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
+          <span id = "days-spent">Days Spent</span>
+          <div class="options">
+            <input type="radio" id="spent-min" name="days-spent" value="-1"><label for="spent-min">Min</label>
+            <input type="radio" id="spent-max" name="days-spent" value="1" checked><label for="spent-max">Max</label>
+          </div>
+        </div>
+        <div class="preference" id = "weigth" draggable="true">
+          <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
+          <span id = "weight-name">Reasonable Walking Time</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="interface-buttons">
+      <button type="button" class="generate-schedule active" id = "generate-schedule-btn" onclick="fetchData()">GENERATE SCHEDULE</button>
+      <button type="button" class="toggle-view " id="toggle-view-btn" onclick="switchView()">MORE OPTION</button>
+    </div>
+
+  </div>
+  <div class="timetable" >
+    <div id="large-view" class="timetable-view">
+      <!-- 大视图的课程表内容 -->
+      <div style="width: 100%;">
+        <table class="table table-bordered" style="text-align: center; table-layout: fixed">
+          <thead>
+          <tr>
+            <th></th>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+          </tr>
+          </thead>
+          <tbody id="timetable-output">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="small-view" class="timetable-view" >
+      <!-- 小视图的课程表内容 -->
+    </div>
+    <!-- 视图切换按钮 -->
+    <!-- <button id="toggle-view-btn" onclick="switchView()">切换视图</button> -->
+  </div>
   </div>
 
   <script>

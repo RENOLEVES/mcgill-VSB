@@ -1,6 +1,5 @@
-.container {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
+.container-main {
+    margin: 0 100px 0 100px ;
     display: flex;
 }
 .course-choose-list {
@@ -8,10 +7,9 @@
     height: 200px;
 }
 .timetable {
-    margin: 0 0 0 0;
+    float:right;
     overflow: auto;
     flex: 2;
-    width: auto;
     height: 690px;
 }
 .sidebar {
@@ -182,7 +180,7 @@
 
 .generate-schedule:hover,
 .toggle-view:hover {
-    background-color: #2263e4;
+    background-color: #8a080d;
 }
 
 .generate-schedule,
@@ -197,6 +195,7 @@
 
 .term-btn {
     background-color: #e7e7e7;
+    width: 100px;
     color: black;
     padding: 10px 20px;
     border: none;
@@ -315,7 +314,7 @@
 
 
 @media screen and (max-width: 950px) {
-    .container {
+    .container-main {
       flex-direction: column;
     }
 
