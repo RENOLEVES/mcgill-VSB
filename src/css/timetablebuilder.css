@@ -1,6 +1,7 @@
 .container {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
     display: flex;
-    width:100%;
 }
 .course-choose-list {
     overflow: auto;
@@ -8,13 +9,12 @@
 }
 .timetable {
     overflow: auto;
-    flex: 3;
+    flex: 2;
     width: auto;
     height: 700px;
 }
 .sidebar {
-    width: 33%;
-    /* 其他样式保持不变 */
+    width: 30%;
 }
 
 .timetable-view {
@@ -24,7 +24,6 @@
 .timetable-view.active {
     display: block; /* 激活的视图显示 */
 }
-
 
 #small-view {
     /* display: flex; */
