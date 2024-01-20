@@ -9,9 +9,13 @@
         <module name="mcgillschedule" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="com.mcgillschedule" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="com.mcgillschedule" options="-parameters" />
       <module name="mcgillschedule" options="-parameters" />
     </option>
   </component>

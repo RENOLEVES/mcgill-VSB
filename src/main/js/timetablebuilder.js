@@ -562,9 +562,9 @@ function switchCredit(term) {
     let output = ""
 
     if (term === "fall") {
-        output = `Total Credits: ${fallCredit.toFixed(2)} / 3.00`;
+        output = `Credits: ${fallCredit.toFixed(2)} / 3.00`;
     }else{
-        output = `Total Credits: ${winterCredit.toFixed(2)} / 3.00`;
+        output = `Credits: ${winterCredit.toFixed(2)} / 3.00`;
     }
     credit.forEach(credit => {
         credit.innerText = output;
