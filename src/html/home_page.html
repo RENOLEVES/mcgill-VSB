@@ -7,8 +7,8 @@
   <!-- jQuery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/timetablebuilder.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/timetablebuilder.css">
   <!-- selectize stylesheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css" integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
   <!-- bootstrap stylesheet -->
@@ -54,7 +54,7 @@
 <br> -->
 <div class="timetable-header">
   <div class="title">
-    <img src="image/Mcgill_logo.png" alt="header logo" height="50">
+    <img src="../image/Mcgill_logo.png" alt="header logo" height="50">
   </div>
   <nav class="timetable-header-nav">
   </nav>
@@ -69,6 +69,33 @@
 </div>
 
 <div class="container-main">
+  <div class="timetable" >
+    <div id="large-view" class="timetable-view">
+      <!-- 大视图的课程表内容 -->
+      <div style="width: 100%;">
+        <table class="table table-bordered" style="text-align: center; table-layout: fixed">
+          <thead>
+          <tr>
+            <th></th>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+          </tr>
+          </thead>
+          <tbody id="timetable-output">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="small-view" class="timetable-view" >
+      <!-- 小视图的课程表内容 -->
+    </div>
+    <!-- 视图切换按钮 -->
+    <!-- <button id="toggle-view-btn" onclick="switchView()">切换视图</button> -->
+  </div>
   <div class="sidebar">
     <!-- 学期切换按钮 -->
 
@@ -98,11 +125,13 @@
 
 
     </div>
-    <!-- 偏好设置 -->
+    <!-- preference settings -->
     <div class = "preference" id="preferences-section">
       <h4>Preferences:</h4>
       <div class = "preference-list" id="weight-parent">
-        <div class="preference" id = "weight" draggable="true">
+
+        <!-- select start time-->
+        <div class="preference" id = "select-start-time" draggable="true">
           <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
           <span id = "start-time">Start time</span>
           <div class="options">
@@ -111,7 +140,9 @@
             <input type="radio" id="start-late" name="start-time" value="2"><label for="start-late">Late</label>
           </div>
         </div>
-        <div class="preference" id = "weigth" draggable="true">
+
+        <!-- select class interval -->
+        <div class="preference" id = "select-class" draggable="true">
           <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
           <span id = "class-interval">Class Interval</span>
           <div class="options">
@@ -119,7 +150,9 @@
             <input type="radio" id="interval-long" name="class-interval" value="1" checked><label for="interval-long">Long</label>
           </div>
         </div>
-        <div class="preference" id="weigth" draggable="true">
+
+        <!-- select days spent -->
+        <div class="preference" id="select-day" draggable="true">
           <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
           <span id = "days-spent">Days Spent</span>
           <div class="options">
@@ -127,45 +160,23 @@
             <input type="radio" id="spent-max" name="days-spent" value="1" checked><label for="spent-max">Max</label>
           </div>
         </div>
-        <div class="preference" id = "weigth" draggable="true">
+
+        <!-- reasonable walking time -->
+        <div class="preference" id = "select-walking-time" draggable="true">
           <svg class="svg" viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
           <span id = "weight-name">Reasonable Walking Time</span>
         </div>
       </div>
+
+
     </div>
 
+    <!-- interface buttons -->
     <div class="interface-buttons">
       <button type="button" class="generate-schedule active" id = "generate-schedule-btn" onclick="fetchData()">GENERATE SCHEDULE</button>
       <button type="button" class="toggle-view " id="toggle-view-btn" onclick="switchView()">MORE OPTION</button>
     </div>
 
-  </div>
-  <div class="timetable" >
-    <div id="large-view" class="timetable-view">
-      <!-- 大视图的课程表内容 -->
-      <div style="width: 100%;">
-        <table class="table table-bordered" style="text-align: center; table-layout: fixed">
-          <thead>
-          <tr>
-            <th></th>
-            <th>MON</th>
-            <th>TUE</th>
-            <th>WED</th>
-            <th>THU</th>
-            <th>FRI</th>
-          </tr>
-          </thead>
-          <tbody id="timetable-output">
-
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div id="small-view" class="timetable-view" >
-      <!-- 小视图的课程表内容 -->
-    </div>
-    <!-- 视图切换按钮 -->
-    <!-- <button id="toggle-view-btn" onclick="switchView()">切换视图</button> -->
   </div>
   </div>
 
@@ -173,6 +184,6 @@
 
   </script>
 
-  <script type="text/javascript" src="js/timetablebuilder.js"></script>
+  <script type="text/javascript" src="../js/timetablebuilder.js"></script>
 </body>
 </html>
