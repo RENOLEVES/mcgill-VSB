@@ -75,8 +75,6 @@
     text-align: center; /* 按钮居中 */
 }
 
-
-
 .term-toggle {
     text-align: center;
     margin-bottom: 20px;
@@ -219,13 +217,13 @@
 
 .term-btn.active {
     /* background-color: #4CAF50; */
-    background-color:rgb(8, 121, 235);
+    background-color:#ed1b2f;
     color: white;
 }
 
 
 .timetable-header {
-    background-color: #045ab0;
+    background-color: #ed1b2f;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -263,7 +261,7 @@
 .title-main {
     font-weight: bold;
     color: #FFF;
-    background-color: #045ab1;
+    background-color: #ed1b2f;
     padding: 5px 10px;
     border-radius: 5px 0 0 5px;
 }
