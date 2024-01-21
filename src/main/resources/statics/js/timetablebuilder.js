@@ -131,6 +131,7 @@ function canAdd(courseCode , sectionCode){
     }
     return true;
 }
+
 function addCourseToSelect(input) {
     let origin = window.location.origin;
     $.ajax({
@@ -153,7 +154,7 @@ function addCourseToSelect(input) {
             selectControl.refreshOptions();
         },
         error: function () {
-            alert("Error, something went wrong pleace contact admin!");
+            alert("Error");
         }
     });
 }

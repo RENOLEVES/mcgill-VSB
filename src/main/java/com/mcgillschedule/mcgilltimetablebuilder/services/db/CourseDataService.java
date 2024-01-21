@@ -1,4 +1,4 @@
-package main.services.db;
+package com.mcgillschedule.mcgilltimetablebuilder.services.db;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -13,11 +13,11 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com..model.backend.CourseInfo;
-import com..uofttimetablebuilder.model.backend.TimeAndPlace;
-import com.uoftbox.uofttimetablebuilder.model.mysql.MeetingSections;
-import com.uoftbox.uofttimetablebuilder.repository.courses.CoursesRepository;
-import com.uoftbox.uofttimetablebuilder.repository.meetingsections.MeetingSectionsRepository;
+import com.mcgillschedule.mcgilltimetablebuilder.model.backend.CourseInfo;
+import com.mcgillschedule.mcgilltimetablebuilder.model.backend.TimeAndPlace;
+import com.mcgillschedule.mcgilltimetablebuilder.model.mysql.MeetingSections;
+import com.mcgillschedule.mcgilltimetablebuilder.repository.courses.CoursesRepository;
+import com.mcgillschedule.mcgilltimetablebuilder.repository.meetingsections.MeetingSectionsRepository;
 
 @Service
 public class CourseDataService {

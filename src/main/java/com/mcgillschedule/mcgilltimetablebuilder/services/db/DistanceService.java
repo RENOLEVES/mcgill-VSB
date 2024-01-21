@@ -1,9 +1,8 @@
-package main.services.db;
+package com.mcgillschedule.mcgilltimetablebuilder.services.db;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com..uofttimetablebuilder.repository.distance.DistancesRepository;
+import com.mcgillschedule.mcgilltimetablebuilder.repository.distance.DistancesRepository;
 
 @Service
 public class DistanceService {

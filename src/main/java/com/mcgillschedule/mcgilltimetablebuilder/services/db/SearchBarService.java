@@ -1,12 +1,12 @@
-package main.services.db;
+package com.mcgillschedule.mcgilltimetablebuilder.services.db;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.uoftbox.uofttimetablebuilder.repository.courses.CoursesRepository;
-import com.uoftbox.uofttimetablebuilder.repository.courses.RelevantCourse;
+import com.mcgillschedule.mcgilltimetablebuilder.repository.courses.CoursesRepository;
+import com.mcgillschedule.mcgilltimetablebuilder.repository.courses.RelevantCourse;
 
 @Service
 public class SearchBarService {
