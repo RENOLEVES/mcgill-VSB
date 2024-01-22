@@ -1,4 +1,4 @@
-package com.mcgillschedule.mcgilltimetablebuilder.services.db;
+package com.mcgillschedule.mcgilltimetablebuilder.service.db;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

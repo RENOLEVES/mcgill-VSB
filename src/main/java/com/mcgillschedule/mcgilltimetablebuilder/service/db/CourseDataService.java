@@ -1,4 +1,4 @@
-package com.mcgillschedule.mcgilltimetablebuilder.services.db;
+package com.mcgillschedule.mcgilltimetablebuilder.service.db;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

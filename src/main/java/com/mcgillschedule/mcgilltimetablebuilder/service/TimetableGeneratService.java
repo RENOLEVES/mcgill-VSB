@@ -1,4 +1,4 @@
-package com.mcgillschedule.mcgilltimetablebuilder.services;
+package com.mcgillschedule.mcgilltimetablebuilder.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,15 +9,14 @@ import java.util.Queue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-.uofttimetablebuilder.model.backend.CourseInfo;
-import com.uoftbox.uofttimetablebuilder.model.backend.TimeAndPlace;
-import com.uoftbox.uofttimetablebuilder.model.backend.TimetableMetrics;
-import com.uoftbox.uofttimetablebuilder.model.backend.TimetableResultInfo;
-import com.uoftbox.uofttimetablebuilder.model.backend.TimetableWithScore;
-import com.uoftbox.uofttimetablebuilder.model.frontend.UserPreferences;
-import com.uoftbox.uofttimetablebuilder.service.dbservice.CourseDataService;
-import com.uoftbox.uofttimetablebuilder.service.dbservice.DistanceService;
-import main.services.db.CourseDataService;
+import com.mcgillschedule.mcgilltimetablebuilder.model.backend.CourseInfo;
+import com.mcgillschedule.mcgilltimetablebuilder.model.backend.TimeAndPlace;
+import com.mcgillschedule.mcgilltimetablebuilder.model.backend.TimetableMetrics;
+import com.mcgillschedule.mcgilltimetablebuilder.model.backend.TimetableResultInfo;
+import com.mcgillschedule.mcgilltimetablebuilder.model.backend.TimetableWithScore;
+import com.mcgillschedule.mcgilltimetablebuilder.model.frontend.UserPreferences;
+import com.mcgillschedule.mcgilltimetablebuilder.service.db.CourseDataService;
+import com.mcgillschedule.mcgilltimetablebuilder.service.db.DistanceService;
 
 @Service
 public class TimetableGeneratService {
