@@ -1,4 +1,9 @@
 const http = require('http');
+const fs = require('fs');
+const app = express();
+const PORT = 3000;
+
+app.use(express.json());
 
 //create an HTTP,server send response by response.write() and get request HTTP Version
 const server = http.createServer((request, response)=>{
@@ -10,8 +15,27 @@ const server = http.createServer((request, response)=>{
     response.end();
 })
 //
-const PORT = 3000;
+
+//create
+app.post('/search', (req, res) =>{
+    const searchTerm = req.body.searchTerm;
+
+    fs.readFile('data.json','utf8', (err, data) =>{
+    if (err) {
+        console.error(err);
+        return res.status(500).json({ error: 'please contact administrator'});
+    }
+
+    const courseData = JSON.parse(data);
+
+    const results = jsonData.filter(course => course.title.includes(searchTerm));
+
+    res.json(results)
+    });
+});
+
 //check if server is running
 server.listen(PORT, () =>{
     console.log(`Server running at http://localhost:${PORT}`);
 })
+
